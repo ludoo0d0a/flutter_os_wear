@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_os_wear/screens/ambient_screen.dart';
 import 'package:flutter_os_wear/screens/relax_menu.dart';
-import 'package:flutter_os_wear/wear.dart';
+import 'package:wear/wear.dart';
 
 class NameScreen extends StatelessWidget {
   final screenHeight;
@@ -11,7 +11,7 @@ class NameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AmbientMode(
-      builder: (context, mode) => mode == Mode.active
+      builder: (BuildContext context, WearMode mode, Widget? child) => mode == WearMode.active
           ? NameScreenUI(screenHeight, screenWidth)
           : AmbientWatchFace(),
     );
@@ -40,8 +40,8 @@ class NameScreenUI extends StatelessWidget {
                       'assets/outline_arrow.png',
                       scale: 1.8,
                     ),
-                    SizedBox(width: 5),
-                    Text(
+                    const SizedBox(width: 5),
+                    const Text(
                       'Back',
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
@@ -52,14 +52,14 @@ class NameScreenUI extends StatelessWidget {
                   Navigator.of(context).pop();
                 },
               ),
-              SizedBox(height: 15),
-              Text(
+              const SizedBox(height: 15),
+              const Text(
                 'Welcome to',
                 style: TextStyle(
                   fontSize: 18,
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(
                 'FlutterOS',
                 style: TextStyle(
@@ -67,14 +67,10 @@ class NameScreenUI extends StatelessWidget {
                   color: Colors.blue[700],
                 ),
               ),
-              SizedBox(height: 5),
-              RaisedButton(
+              const SizedBox(height: 5),
+              MaterialButton(
                 highlightColor: Colors.blue[900],
                 elevation: 6.0,
-                child: Text(
-                  'NEXT',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -85,6 +81,10 @@ class NameScreenUI extends StatelessWidget {
                     return RelaxView(screenHeight, screenWidth);
                   }));
                 },
+                child: const Text(
+                  'NEXT',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                ),
               )
             ],
           ),
