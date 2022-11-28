@@ -1,16 +1,101 @@
-# flutter_os_wear
+# Flutter OS (Android Wear OS app)
 
-A new Flutter project.
+<p align="center">
+  <img src="https://github.com/sbis04/flutter_os_wear/blob/master/screenshots/wear_cover.png">
+</p>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## What this fork is for ? 
+Refactoring by LudoO, to upgrade on v2 + wear plugin
 
-A few resources to get you started if this is your first Flutter project:
+### **Checkout my Medium article ["Flutter: Building Wear OS app"](https://medium.com/flutter-community/flutter-building-wearos-app-fedf0f06d1b4).**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+First of all I want to state that it is not an OS, it is just an app.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This is an app for Wear OS devices which is inspired from the Medium article written by [Matt Sullivan](https://medium.com/@mjohnsullivan), ["Experimenting with Flutter on Wear OS"](https://medium.com/@mjohnsullivan/experimenting-with-flutter-on-wear-os-f789d843f2ef). This article really helped me to understand, how to manage the screen size of the app properly and inheriting it to different classes.
+
+In this app, I tried to optimize the [relax](https://github.com/erinmorrissey/relax) app created by Erin Morrissey (made as a Flutter Create Submission 2019, which got nominated for Visual Beauty), to run on Wear OS devices.
+
+The wear app has two modes:
+1) Normal Mode
+2) Ambient Mode (which is the battery saving mode)
+
+You can checkout some snaps of the app below.
+
+## Screenshots
+
+<p align="left">
+  <img src="https://github.com/sbis04/flutter_os_wear/blob/master/screenshots/flt_1.png">
+</p>
+
+## App in Action
+
+<p align="left">
+  <img src="https://github.com/sbis04/flutter_os_wear/blob/master/screenshots/final_watch.gif">
+</p>
+
+# Set Up (Important)
+
+## Manifest File
+
+Add the following to your AndroidManifest.xml file:
+
+```xml
+<!-- Required for ambient mode support -->
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+<!-- Flags the app as a Wear app -->
+<uses-feature android:name="android.hardware.type.watch" />
+
+<!-- Flags that the app doesn't require a companion phone app -->
+<application>
+<meta-data
+    android:name="com.google.android.wearable.standalone"
+    android:value="true" />
+</application>
+```
+
+## Update Android's MainActivity
+
+The ambient mode widget needs some initialization in Android's MainActivity code. Update your code as follows:
+
+```kotlin
+class MainActivity: FlutterActivity(), AmbientMode.AmbientCallbackProvider {
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    GeneratedPluginRegistrant.registerWith(this)
+
+    // Wire up the activity for ambient callbacks
+    AmbientMode.attachAmbientSupport(this)
+  }
+
+  override fun getAmbientCallback(): AmbientMode.AmbientCallback {
+    return FlutterAmbientCallback(getChannel(flutterView))
+  }
+}
+```
+
+
+If you like the project please give star ⭐️.
+
+# license of the original source project
+
+Copyright (c) 2019 Souvik Biswas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
