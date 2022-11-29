@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_os_wear/screens/name_screen.dart';
+import 'package:flutter_os_wear/screens/swipe/page1.dart';
 import 'package:flutter_os_wear/utils.dart';
 import 'package:wear/wear.dart';
 
@@ -46,7 +47,26 @@ class StartScreen extends StatelessWidget {
                     'START',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
-                )
+                ),
+                MaterialButton(
+                  highlightColor: Colors.blue[900],
+                  elevation: 6.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  color: Colors.blue[400],
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) {
+                        return const Page1();
+                      }),
+                    );
+                  },
+                  child: const Text(
+                    'SWIPE',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                ),
               ],
             ),
           ),
