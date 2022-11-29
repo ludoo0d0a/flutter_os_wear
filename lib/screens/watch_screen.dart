@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_os_wear/screens/ambient_screen.dart';
-import 'package:flutter_os_wear/screens/start_screen.dart';
+import 'package:flutter_os_wear/screens/relax/ambient_screen.dart';
+import 'package:flutter_os_wear/screens/relax/start_screen.dart';
 import 'package:wear/wear.dart';
 
 class WatchScreen extends StatelessWidget {
