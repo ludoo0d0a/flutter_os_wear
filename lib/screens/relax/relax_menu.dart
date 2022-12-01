@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_os_wear/screens/ambient_screen.dart';
-import 'package:flutter_os_wear/screens/sound_screen.dart';
+import 'package:flutter_os_wear/screens/relax/sound_screen.dart';
 import 'package:wear/wear.dart';
 
 const img = 'assets/images/';

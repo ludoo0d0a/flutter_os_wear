@@ -6,21 +6,32 @@
 
 
 ## What this fork is for ? 
-Refactoring by LudoO, to upgrade on v2 + wear plugin
 
-### **Checkout my Medium article ["Flutter: Building Wear OS app"](https://medium.com/flutter-community/flutter-building-wearos-app-fedf0f06d1b4).**
+Refactoring by LudoO
 
-First of all I want to state that it is not an OS, it is just an app.
+Added features:
+- upgrade [Android v2](https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects)
+- [wear plugin](https://pub.dev/packages/wear) support
+- Plugins upgrade
+- splash screen with [Lottie](https://pub.dev/packages/lottie)
+- Screens to see swipe effects + page samples
+- Riverpod example integration
 
-This is an app for Wear OS devices which is inspired from the Medium article written by [Matt Sullivan](https://medium.com/@mjohnsullivan), ["Experimenting with Flutter on Wear OS"](https://medium.com/@mjohnsullivan/experimenting-with-flutter-on-wear-os-f789d843f2ef). This article really helped me to understand, how to manage the screen size of the app properly and inheriting it to different classes.
+## Source + credits
 
-In this app, I tried to optimize the [relax](https://github.com/erinmorrissey/relax) app created by Erin Morrissey (made as a Flutter Create Submission 2019, which got nominated for Visual Beauty), to run on Wear OS devices.
+**Checkout original Medium article ["Flutter: Building Wear OS app"](https://medium.com/flutter-community/flutter-building-wearos-app-fedf0f06d1b4).**
+
+This is an app for Wear OS devices which is inspired from the Medium article written 
+by [Matt Sullivan](https://medium.com/@mjohnsullivan), 
+["Experimenting with Flutter on Wear OS"](https://medium.com/@mjohnsullivan/experimenting-with-flutter-on-wear-os-f789d843f2ef). 
+This article really helped me to understand, how to manage the screen size of the app properly and inheriting it to different classes.
+
+In this app, I tried to optimize the [relax](https://github.com/erinmorrissey/relax) app created by Erin Morrissey 
+(made as a Flutter Create Submission 2019, which got nominated for Visual Beauty), to run on Wear OS devices.
 
 The wear app has two modes:
 1) Normal Mode
 2) Ambient Mode (which is the battery saving mode)
-
-You can checkout some snaps of the app below.
 
 ## Screenshots
 
@@ -33,47 +44,6 @@ You can checkout some snaps of the app below.
 <p align="left">
   <img src="https://github.com/sbis04/flutter_os_wear/blob/master/screenshots/final_watch.gif">
 </p>
-
-# Set Up (Important)
-
-## Manifest File
-
-Add the following to your AndroidManifest.xml file:
-
-```xml
-<!-- Required for ambient mode support -->
-<uses-permission android:name="android.permission.WAKE_LOCK" />
-
-<!-- Flags the app as a Wear app -->
-<uses-feature android:name="android.hardware.type.watch" />
-
-<!-- Flags that the app doesn't require a companion phone app -->
-<application>
-<meta-data
-    android:name="com.google.android.wearable.standalone"
-    android:value="true" />
-</application>
-```
-
-## Update Android's MainActivity
-
-The ambient mode widget needs some initialization in Android's MainActivity code. Update your code as follows:
-
-```kotlin
-class MainActivity: FlutterActivity(), AmbientMode.AmbientCallbackProvider {
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    GeneratedPluginRegistrant.registerWith(this)
-
-    // Wire up the activity for ambient callbacks
-    AmbientMode.attachAmbientSupport(this)
-  }
-
-  override fun getAmbientCallback(): AmbientMode.AmbientCallback {
-    return FlutterAmbientCallback(getChannel(flutterView))
-  }
-}
-```
 
 
 If you like the project please give star ⭐️.

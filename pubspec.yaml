@@ -38,8 +38,21 @@ dependencies:
   cupertino_icons: ^1.0.5
   audioplayers: ^1.1.1
   wear: ^1.1.0
+  lottie: ^2.0.0
+  sleek_circular_slider: ^2.0.1
+  flutter_launcher_icons: ^0.11.0
 
-
+flutter_icons:
+  android: true
+  ios: false
+  image_path: "assets/logo/logo2.jpg"
+  min_sdk_android: 23 # android min sdk min:16, default 21
+  web:
+    generate: false
+  windows:
+    generate: false
+  macos:
+    generate: false
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +85,7 @@ flutter:
     - assets/audio/
     - assets/images/
     - assets/icons/
+    - assets/lottie/Mobilo/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
