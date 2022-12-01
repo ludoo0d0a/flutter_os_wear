@@ -5,7 +5,9 @@
 </p>
 
 
-## What this fork is for ? 
+## What is this fork for ? 
+
+Attempt to get a boilerplate base to create a wear OS app.
 
 Refactoring by LudoO
 
@@ -16,6 +18,14 @@ Added features:
 - splash screen with [Lottie](https://pub.dev/packages/lottie)
 - Screens to see swipe effects + page samples
 - Riverpod example integration
+
+Issues:
+- Loading (white screen, too long)
+- Lottie animation (animation appears sometimes but never fully)
+- swipe horizontal is a hell (system swipe take priority)
+- Circular slider, swipe horizontal issue too 
+- Sound 
+- Resume activities leads to reboot app
 
 ## Source + credits
 
