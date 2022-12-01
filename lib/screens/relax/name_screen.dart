@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_os_wear/screens/ambient_screen.dart';
-import 'package:flutter_os_wear/screens/relax_menu.dart';
+import 'package:flutter_os_wear/screens/relax/relax_menu.dart';
 import 'package:wear/wear.dart';
 
 class NameScreen extends StatelessWidget {
@@ -11,9 +11,10 @@ class NameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AmbientMode(
-      builder: (BuildContext context, WearMode mode, Widget? child) => mode == WearMode.active
-          ? NameScreenUI(screenHeight, screenWidth)
-          : AmbientWatchFace(),
+      builder: (BuildContext context, WearMode mode, Widget? child) =>
+          mode == WearMode.active
+              ? NameScreenUI(screenHeight, screenWidth)
+              : AmbientWatchFace(),
     );
   }
 }
@@ -52,22 +53,22 @@ class NameScreenUI extends StatelessWidget {
                   Navigator.of(context).pop();
                 },
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 10),
               const Text(
                 'Welcome to',
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 14,
                 ),
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 3),
               Text(
                 'FlutterOS',
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 20,
                   color: Colors.blue[700],
                 ),
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 3),
               MaterialButton(
                 highlightColor: Colors.blue[900],
                 elevation: 6.0,
@@ -83,7 +84,7 @@ class NameScreenUI extends StatelessWidget {
                 },
                 child: const Text(
                   'NEXT',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                  style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
               )
             ],

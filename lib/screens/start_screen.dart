@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_os_wear/screens/name_screen.dart';
-import 'package:flutter_os_wear/screens/swipe/page1.dart';
+import 'package:flutter_os_wear/screens/relax/name_screen.dart';
+import 'package:flutter_os_wear/screens/slider/slider_screen.dart';
 import 'package:flutter_os_wear/screens/swipe/swipe_screen.dart';
 import 'package:flutter_os_wear/utils.dart';
 import 'package:wear/wear.dart';
@@ -30,9 +30,6 @@ class StartScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  // const FlutterLogo(size: 90),
-                  const Text('Start screen'),
-                  const SizedBox(height: 10),
                   MaterialButton(
                     highlightColor: Colors.blue[900],
                     elevation: 6.0,
@@ -48,12 +45,12 @@ class StartScreen extends StatelessWidget {
                       );
                     },
                     child: const Text(
-                      'START',
+                      'relax',
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
                   MaterialButton(
-                    highlightColor: Colors.blue[900],
+                    highlightColor: Colors.blue[500],
                     elevation: 6.0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -67,10 +64,29 @@ class StartScreen extends StatelessWidget {
                       );
                     },
                     child: const Text(
-                      'SWIPE',
+                      'swipe',
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
+                  MaterialButton(
+                    highlightColor: Colors.blue[200],
+                    elevation: 6.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    color: Colors.blue[400],
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) {
+                          return const SliderScreen();
+                        }),
+                      );
+                    },
+                    child: const Text(
+                      'slide',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  )
                 ],
               ),
             ),

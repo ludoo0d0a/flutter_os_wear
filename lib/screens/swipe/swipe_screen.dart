@@ -99,7 +99,8 @@ class _SwipeScreenState extends State<SwipeScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  Text('swipe $labelText'),
+                  const Text('Test swipe'),
+                  Text('- $labelText'),
                   Text('of $updText'),
                   const SizedBox(height: 10),
                   MaterialButton(
@@ -112,12 +113,12 @@ class _SwipeScreenState extends State<SwipeScreen> {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) {
-                          return StartScreen();
+                          return Page1();
                         }),
                       );
                     },
                     child: const Text(
-                      'Start',
+                      'Page 1',
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),

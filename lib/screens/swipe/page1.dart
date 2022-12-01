@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_os_wear/screens/swipe/page0.dart';
+import 'package:flutter_os_wear/screens/swipe/swipe_screen.dart';
+import '../start_screen.dart';
 import 'page2.dart';
 
 class Page1 extends StatelessWidget {
@@ -31,11 +33,11 @@ class Page1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              const Text('<<<<< page 0'),
+              const Text(' page 0 >>>>'),
               const SizedBox(height: 10),
               const Text('Page 1'),
               const SizedBox(height: 10),
-              const Text('page 2 >>>>'),
+              const Text('<<<<< page 2'),
               MaterialButton(
                 highlightColor: Colors.blue[900],
                 elevation: 6.0,
@@ -44,7 +46,10 @@ class Page1 extends StatelessWidget {
                 ),
                 color: Colors.blue[400],
                 onPressed: () {
-                  Navigator.pop(context);
+                  //Navigator.pop(context);
+                  MaterialPageRoute(builder: (context) {
+                    return SwipeScreen();
+                  });
                 },
                 child: const Text(
                   'Quit',
