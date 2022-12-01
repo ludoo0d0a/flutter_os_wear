@@ -14,14 +14,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Scaffold(
-          backgroundColor: Colors.white,
-          body: Center(
-            //child: WatchScreen(),
-            child: SplashScreen(),
-          ),
-        ),
+        home: const SplashScreen(),
         debugShowCheckedModeBanner: false,
       );
 }
-

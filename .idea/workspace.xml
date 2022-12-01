@@ -10,9 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a8556a9-7ef6-49db-9fe4-ae558fc40d87" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/screens/swipe/page0.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/ambient_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/ambient_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/start_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/start_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/swipe/page1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/swipe/page1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/swipe/page2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/swipe/page2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/swipe/swipe_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/swipe/swipe_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/watch_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/watch_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +61,14 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/screens/swipe" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/screens/swipe" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
@@ -72,5 +86,16 @@
       <updated>1669631431453</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

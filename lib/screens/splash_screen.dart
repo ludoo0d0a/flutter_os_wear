@@ -43,6 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     //sportDataWatcher.getSportsData();
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Lottie.asset(splashLogo),
       ),

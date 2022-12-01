@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'page2.dart';
 
-class Page2 extends StatelessWidget {
-  const Page2({Key? key}) : super(key: key);
+class Page0 extends StatelessWidget {
+  const Page0({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Page2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              const Text('Page 2'),
+              const Text('Page 0'),
               const Text('swipe left : back'),
             ],
           ),

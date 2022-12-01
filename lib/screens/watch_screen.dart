@@ -5,26 +5,15 @@ import 'package:wear/wear.dart';
 
 class WatchScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => WatchShape(
-        builder: (BuildContext context, WearShape shape, Widget? child) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Shape: ${shape == WearShape.round ? 'round' : 'square'}',
-              ),
-              child!,
-            ],
-          );
-        },
-        child: AmbientMode(
-          builder: (BuildContext context, WearMode mode, Widget? child) {
-            //return StartScreen();
+  Widget build(BuildContext context) {
+    return WatchShape(
+      builder: (BuildContext context, WearShape shape, Widget? child) {
+        return AmbientMode(
+          builder: (context, WearMode mode, child) {
             return mode == WearMode.active ? StartScreen() : AmbientWatchFace();
-            // return Text(
-            //   'Mode: ${mode == WearMode.active ? 'Active' : 'Ambient'}',
-            // );
           },
-        ),
-      );
+        );
+      },
+    );
+  }
 }
